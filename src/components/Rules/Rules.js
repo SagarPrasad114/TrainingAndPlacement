@@ -1,6 +1,15 @@
 import React from 'react'
-
+import {saveAs} from 'file-saver';
+import filePath1 from "../../utils/Annexure1.pdf";
+import filePath2 from "../../utils/Annexure2.pdf";
+import "./Rules.css";
 function Rules() {
+  const handleAnnexureI=()=>{
+    saveAs(filePath1,"Annexure1.pdf");
+  }
+  const handleAnnexureII=()=>{
+    saveAs(filePath2,"Annexure2.pdf");
+  }
   return (
     <div>
 
@@ -21,6 +30,18 @@ function Rules() {
             <h2>
               ➢Students not interested in Placement activities must fill <strong> Annexure-II</strong> with appropriate reasons.
             </h2>
+          </div>
+          <div className='flex flex-row items-center justify-center p-[2px] mb-[15px] text-[20px]'>
+            <div>
+              <h2>Download : </h2>
+            </div>
+            <div className='button mx-[19px] text-center'>
+              <button id="downloadBtn1" onClick={handleAnnexureI}value="download1">Annexure-I</button>
+            </div>
+            <div className='button mx-[19px] text-center'>
+              <button id="downloadBtn2" onClick={handleAnnexureII}value="download2">Annexure-II</button>
+            </div>
+            
           </div>
         </div>
         {/*Rules*/}
