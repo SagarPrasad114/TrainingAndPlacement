@@ -4,10 +4,10 @@ import "./Nav.css"
 
 function Nav() {
   return (
-    <nav className="navbar bg-black h-[60px] ">
-     <ol className=' flex justify-center items-center relative p-[5px] text-white no-underline'>
+    <nav className="navbar bg-black h-[100px] fixed w-[100%] z-[1000]">
+     <ol className=' flex justify-center items-center relative p-[20px] text-white no-underline'>
      <Link to="/"
-     className='navbar_logo flex pl-[1rem]  text-[1.5rem]  mr-[50px]'>
+     className='navbar_logo flex pl-[1rem]  text-[2rem]  mr-[50px]'>
      Logo     
      </Link>
      <li className=' mx-[25px]'>

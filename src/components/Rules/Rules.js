@@ -11,9 +11,9 @@ function Rules() {
     saveAs(filePath2,"Annexure2.pdf");
   }
   return (
-    <div>
-
-      <div className='flex flex-col justify-center'>
+    <div className='absolute'>
+      <div className='flex flex-col justify-center
+      mt-[75px] relative'>
         {/* Eligibility */}
         <div className='flex flex-col my-[2.5rem] border-[2px]  border-solid mx-[20px]'>
           <div className='flex justify-center items-center mt-[15px] mb-[30px] text-3xl font-bold '>
@@ -77,15 +77,19 @@ function Rules() {
           </div>
         </div>
         {/*Offers Criteria*/}
-        <div className='flex flex-col my-[2.5rem] border-[2px]  border-solid mx-[20px]'>
-          <div className='flex justify-center items-center mt-[15px] mb-[30px] text-3xl font-bold '>
+        <div className='flex flex-col my-[2.5rem] border-[2px]  border-solid mx-[20px] p-[50px] pt-[17px] text-[21px]'>
+          <div className='flex justify-center items-center  mb-[30px] text-3xl font-bold '>
             <h1>Job Offers</h1>
           </div>
-          <div className='p-[50px] text-[21px]'>
-            <h2>➢Students are eligible for 1 job offer in any 3 of the ranges that are :
-
+          <div className=' flex flex-col'>
+            <div className='flex flex-row'>
+            <div>➢</div>
+            <div><h2>Students are eligible for 1 job offer in any 3 out of the 4 ranges, that are :
             </h2>
-            <ul>
+            </div>
+            </div>
+            <div>
+            <ul className='ml-[1.3%]'>
               <li>
                 1-7 LPA:
               </li>
@@ -99,6 +103,7 @@ function Rules() {
                 16+ LPA:
               </li>
             </ul>
+            </div>
             <div>
               <h2>
                 ➢A student can secure  maximum of <b>3</b> offers after which He/She will be removed from the placement process.
