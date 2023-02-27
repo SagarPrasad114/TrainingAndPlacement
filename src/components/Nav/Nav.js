@@ -21,7 +21,9 @@ function Nav() {
      <li className=' mx-[25px]'>
       <Link to="/rules">Rules</Link></li>
      {/* only for teachers */}
-     <li className='text-white no-underline mx-[25px]'>Students</li>
+     <Link to="/signin">
+     <li className='text-white no-underline mx-[25px]'>SignIn</li>
+      </Link>
      </ol>
     </nav>
   )

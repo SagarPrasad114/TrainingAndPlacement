@@ -1,6 +1,6 @@
 import {React,useState} from 'react'
-import {auth} from "../../db/firebase.js";
-import { createUserWithEmailAndPassword} from 'firebase/auth'; 
+import {auth,googleProvider} from "../../db/firebase.js";
+import { createUserWithEmailAndPassword,signInWithPopup,signOut} from 'firebase/auth'; 
 
 function SignIn() {
   const [email,setEmail]=useState("");
@@ -12,11 +12,18 @@ function SignIn() {
     setEmail("");
     setPassword("");
     }catch(err){
-      console.log(err);
+      console.err(err);
     }
   };
+  const signInWithGoogle = async() => {
+    try{
+    await signInWithPopup(auth,googleProvider);
+    }catch(err){
+      console.err(err);
+    }
+  }
   const handleSignOut = async () => {
-    await auth.signOut();
+    await signOut(auth);
   };
   const handleEmail=(e)=>{
     setEmail(e.target.value);
@@ -24,7 +31,7 @@ function SignIn() {
   const handlePassword=(e)=>{
     setPassword(e.target.value);
   };
-
+  
   return (
     <div className='absolute mt-[100px]'>
       <div>
@@ -42,7 +49,7 @@ function SignIn() {
         </div>
         
         <div>
-          <button className='border-2'>Sign in With Google</button>
+          <button onClick={signInWithGoogle} className='border-2'>Sign in With Google</button>
         </div>
         <div>
           <button className='border-2' onClick={handleSignOut}>Sign Out</button>
